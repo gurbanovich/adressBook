@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Adress book</title>
+<link href="css/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body ng-app="adressBook">
+	<div class="container" ng-controller="AppCtrl">
+		<div class="row">
+			<div class="form-group col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Person info</div>
+					<div class="panel-body">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+								
+									<th>First name</th>
+									<th>second name</th>
+									<th>work place</th>
+									<th>adress</th>
+									<th>comments</th>
+									<th>numbers</th>
+
+									<th>emails</th>
+									
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="adressBookForm in adressBookForms">
+									
+									<td>{{adressBookForm.firstName}}</td>
+									<td>{{adressBookForm.secondName}}</td>
+									<td>{{adressBookForm.workPlace}}</td>
+									<td>{{adressBookForm.adress}}</td>
+									<td>{{adressBookForm.comments}}</td>
+									<td>{{adressBookForm.numbers}}</td>
+						
+
+									<td>{{adressBookForm.emails}}</td>
+							
+
+								</tr>
+							</tbody>
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="js/lib/angular.min.js"></script>
+	<script type="text/javascript" src="js/app/main.js"></script>
+</body>
+</html>
