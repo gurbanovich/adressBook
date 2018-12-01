@@ -11,5 +11,6 @@ public interface PhoneBookService {
 	public void delPerson(Long id);
 	public AdressBookForm getPersonData(Long id);
 	public List<AdressBookForm> showAllContacts();	
+	public boolean isPersonExist(AdressBookForm abf);
 	
 }

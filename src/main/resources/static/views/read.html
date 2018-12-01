@@ -1,0 +1,72 @@
+
+<div class="generic-container">
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading">
+			<span class="lead">Show person </span>
+		</div>
+		<div class="panel-body">
+			<div class="formcontainer">
+				<ng-form name="myForm" class="form-horizontal">
+				<table class="table table-striped">
+					<tr>
+						<td>First Name</td>
+						<td><input type="text" ng-model="adressBookForm.firstName"
+							class="form-control input-sm" placeholder="Enter person's name"
+							required ng-minlength="3" /></td>
+					</tr>
+					<tr>
+						<td>Second Name</td>
+						<td><input type="text" ng-model="adressBookForm.secondName"
+							class="form-control input-sm"
+							placeholder="Enter person's surname" required ng-minlength="3" /></td>
+					</tr>
+					<tr>
+						<td>work place</td>
+						<td><textarea ng-model="adressBookForm.workPlace"
+								class="form-control input-sm"
+								placeholder="Enter person's workplace" required
+								ng-maxlength="70"></textarea></td>
+					</tr>
+					<tr>
+						<td>adress</td>
+						<td><textarea ng-model="adressBookForm.adress"
+								class="form-control input-sm"
+								placeholder="Enter person'sour adress" required
+								ng-maxlength="100"></textarea></td>
+					</tr>
+					<tr>
+						<td>comments</td>
+						<td><textarea ng-model="adressBookForm.comments"
+								class="form-control input-sm"
+								placeholder="Enter person's comments" required
+								ng-maxlength="255"></textarea></td>
+					</tr>
+					<tr>
+						<td>phone numbers</td>
+						<td><textarea type="list" ng-model="adressBookForm.numbers"
+								class="form-control input-sm"
+								placeholder="Enter person's numbers" required
+								ng-pattern="ctrl.phoneNumbers" ng-list></textarea></td>
+					</tr>
+					<tr>
+						<td>emails</td>
+						<td><textarea type="list" ng-model="adressBookForm.emails"
+								class="form-control input-sm"
+								placeholder="Enter person's emails" required
+								ng-pattern="ctrl.emails" ng-list></textarea></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="button" value="Save"
+							class="btn btn-success custom-width"
+							ng-click="save(adressBookForm)"
+							ng-disabled="myForm.$invalid || myForm.$pristine" />
+							<button type="Cancel" class="btn btn-danger custom-width"
+								onclick="javascript:window.location='#/list';">Cancel</button></td>
+					</tr>
+				</table>
+				</ng-form>
+			</div>
+		</div>
+	</div>
+</div>

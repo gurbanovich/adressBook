@@ -1,0 +1,40 @@
+
+<div class="generic-container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<span class="lead">List of persons </span>
+		</div>
+		<div class="panel-body">
+			<div class="formcontainer">
+				<form action="#/create">
+					<button type="Submit" class="btn btn-success custom-width">Add</button>
+				</form>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>First name</th>
+							<th>second name</th>
+							<th>number</th>
+							<th>email</th>
+							<th width="90"></th>
+							<th width="80"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="adressBookForm in adressBookForms">
+							<td ng-bind="adressBookForm.firstName" /></td>
+							<td ng-bind="adressBookForm.secondName" /></td>
+							<td ng-bind="adressBookForm.numbers" />
+							<td ng-bind="adressBookForm.emails" /></td>
+							<td><button type="button"
+									ng-click="showPerson(adressBookForm.personId)"
+									class="btn btn-success custom-width">Read</button></td>
+							<td><button type="button"
+									ng-click="removePerson(adressBookForm.personId)"
+									class="btn btn-danger custom-width">Remove</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
