@@ -93,20 +93,11 @@ public class PhoneBookServiceImpl implements PhoneBookService {
 		List<AdressBookForm> results = new LinkedList<AdressBookForm>();
 		List<Person> persons = pRep.findAll();
 		for (Person p : persons) {
-			String number = null;
-			String email = null;
-			AdressBookForm result = null;
 			List<String> numbers = numRep.findPersonNumbers(p.getPersonId());
 			List<String> emails = emailRep.findPersonEmails(p.getPersonId());
-			for (String s : numbers) {
-				number = s;
-				break;
-			}
-			for (String s : emails) {
-				email = s;
-				break;
-			}
-			result = new AdressBookForm(p.getPersonId(), p.getFirstName(), p.getSecondName(), number, email);
+			String number = numbers.get(0);
+			String email = emails.get(0);
+			AdressBookForm result = new AdressBookForm(p.getPersonId(), p.getFirstName(), p.getSecondName(), number, email);
 			results.add(result);
 		}
 		return results;
